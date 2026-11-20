@@ -28,6 +28,7 @@
 - `PROGRESS.md`：学习进度看板
 - `CHANGELOG.md`：项目更新记录
 - `HANDWRITING-REVIEW.md`：手写记录与反复回顾协议
+- `QUESTION-GUIDE.md`：每个学习步骤如何提问
 
 ## 对话方式
 
