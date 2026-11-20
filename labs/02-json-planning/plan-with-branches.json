@@ -1,0 +1,35 @@
+{
+  "task": "基于公司经营数据生成可核验的研究小结",
+  "decision_rules": [
+    {
+      "if": "发现关键字段缺失",
+      "then": "回到原始数据源补充并重新校验",
+      "else": "继续进行口径确认"
+    },
+    {
+      "if": "统计口径、时间范围或单位模糊",
+      "then": "先向用户提出澄清问题，暂停后续计算",
+      "else": "继续计算关键变化"
+    },
+    {
+      "if": "计算结果或趋势出现异常",
+      "then": "进入核查流程，复核原始数据、计算公式和输入口径",
+      "else": "继续生成可能解释"
+    },
+    {
+      "if": "原始数据源也无法提供缺失字段",
+      "then": "标记为无法判断，不编造、不强行得出结论",
+      "else": "补充数据后重新执行分析"
+    }
+  ],
+  "execution_order": [
+    "define_scope",
+    "read_and_validate_data",
+    "check_missing_data",
+    "clarify_ambiguous_definitions",
+    "calculate_changes",
+    "check_anomalies",
+    "review_analysis",
+    "generate_research_summary"
+  ]
+}
