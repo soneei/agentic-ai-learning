@@ -11,3 +11,4 @@
 - 记录学习动机、工程师成长目标，并新增 Agentic AI 学习提问指南。
 - 将第一个实验收敛为“表内可核验变化”，创建 Direct Generation prompt 初稿和合格判定清单。
 - 完成首轮 Reflection：按同一检查清单复核 Direct Generation，发现一处措辞可更精确，但不需要大幅重写。
+- 构造故意含计算错误和越界判断的输出，验证 Reflection 能识别错误、表外推断和投资结论。
