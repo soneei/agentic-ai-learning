@@ -15,7 +15,7 @@
 |---|---|---|
 | Agent vs hardcoded tool | Done | `notes/00-two-day-learning-summary.md` |
 | Agentic workflow | Done | `notes/00-two-day-learning-summary.md` |
-| Reflection | In progress | 待创建 `labs/01-direct-generation-vs-reflection/` |
+| Reflection | In progress | 已创建 `labs/01-direct-generation-vs-reflection/PROMPT.md` |
 | Planning | Not started | - |
 | Tool use | Not started | - |
 | Evaluation / error analysis | Not started | - |
