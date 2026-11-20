@@ -30,3 +30,22 @@
 - 返回结果如何更新下一步状态
 - 什么时候继续，什么时候停止
 - 工具失败时如何处理
+
+## 第一个工具：`read_dataset`
+
+代码位于 `tools.py`，它只负责检查必要字段并返回结构化结果：
+
+```text
+输入 dataset
+→ 检查 company / unit / years / metrics
+→ 缺失字段：返回 error 和 fetch_from_source
+→ 字段齐全：返回 success 和 calculate_changes
+```
+
+它不计算增长率、不判断异常，也不生成投资结论，保持单一职责。
+
+运行测试：
+
+```bash
+python3 -m unittest test_tools.py
+```
