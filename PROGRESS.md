@@ -42,3 +42,4 @@
 3. 用明确 criteria 比较两份结果。
 4. 记录改善、退化和无法判断的地方。
 5. 把实验过程整理到 `labs/01-direct-generation-vs-reflection/`。
+6. 比较 Direct Generation 与 Reflection 的收益、代价和适用场景。
