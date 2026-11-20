@@ -15,3 +15,4 @@
 - 比较 Direct Generation 与 Reflection 的收益、代价和适用场景，完成首个实验闭环。
 - 将 Reflection 模块标记为完成，开始 Lab 02：JSON Planning。
 - 根据用户提出的四步任务，修正为“口径确认 → 描述变化 → 异常检测 → 带边界解释 → 验证 → 输出”的七步计划。
+- 纳入 Module 1 PDF 学习材料，补充 Planning 的运行时工具选择、澄清、分支、兜底和 trace 观察要点。

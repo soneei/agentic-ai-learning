@@ -10,7 +10,7 @@
 
 - [x] 完成 Day 1：Agent 与硬编码工具的区别
 - [x] 完成 Day 2：Agentic AI workflow 基础概念
-- [ ] 完成 Direct Generation vs Reflection 实验
+- [x] 完成 Direct Generation vs Reflection 实验
 - [ ] 完成 JSON Planning 实验
 - [ ] 完成 Tool Use Loop
 - [ ] 建立 Trace / Span 记录
@@ -22,6 +22,7 @@
 ## 仓库结构
 
 - `notes/`：课程概念与个人学习笔记
+- `notes/02-module1-design-patterns.md`：Module 1 的 Planning / Tool Use / Reflection 对照与实验补充
 - `labs/`：最小可运行实验
 - `assignments/`：课程作业与完成记录
 - `evaluations/`：实验评估、trace、span 与错误分析
