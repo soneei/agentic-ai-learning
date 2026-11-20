@@ -100,3 +100,37 @@ python3 -m unittest discover -p "test_*.py"
 - 数据正常 → `generate_hypotheses`
 
 本实验先把“分支是否正确”与“模型是否聪明”分开，便于定位问题。
+
+## 执行器从输入到输出的完整流程
+
+```text
+1. 创建 Scenario
+   输入场景名称、缺失字段、原始数据可用性、口径状态和结果状态
+
+2. 调用 choose_path(scenario)
+   执行器按优先顺序检查各类状态
+
+3. 检查数据缺失
+   有缺失且原始源可用 → fetch_from_source
+   有缺失且原始源也没有 → stop_without_guessing
+
+4. 检查口径是否模糊
+   模糊 → ask_for_clarification，并暂停后续计算
+
+5. 检查结果是否异常
+   异常 → verify_source_and_calculation
+
+6. 如果以上问题都不存在
+   → generate_hypotheses，继续提出带边界的可能解释
+
+7. 返回结构化字典
+   包含 status、next_step、message
+
+8. run_demo 逐个运行五种场景并打印结果
+```
+
+核心链路：
+
+```text
+结构化输入 → 按优先级判断 → 选择路径 → 结构化输出
+```
