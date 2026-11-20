@@ -4,7 +4,7 @@
 
 - Current stage: 完成 Day 1–2 学习记录
 - Completion: 2 / 8 modules
-- Current focus: Direct Generation vs Reflection
+- Current focus: JSON Planning
 - Learning goal: 成为能够独立做产品、解决真实问题并获得收入的超级个体
 - Current coding gap: 还不懂如何写代码，需要从最小可运行实验开始
 - Last updated: 2026-11-20
