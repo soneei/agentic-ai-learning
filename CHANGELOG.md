@@ -13,3 +13,4 @@
 - 完成首轮 Reflection：按同一检查清单复核 Direct Generation，发现一处措辞可更精确，但不需要大幅重写。
 - 构造故意含计算错误和越界判断的输出，验证 Reflection 能识别错误、表外推断和投资结论。
 - 比较 Direct Generation 与 Reflection 的收益、代价和适用场景，完成首个实验闭环。
+- 将 Reflection 模块标记为完成，开始 Lab 02：JSON Planning。

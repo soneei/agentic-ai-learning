@@ -15,7 +15,7 @@
 |---|---|---|
 | Agent vs hardcoded tool | Done | `notes/00-two-day-learning-summary.md` |
 | Agentic workflow | Done | `notes/00-two-day-learning-summary.md` |
-| Reflection | In progress | 已完成首轮检查和故意缺陷测试：`labs/01-direct-generation-vs-reflection/FLAWED-REFLECTION-RESULT.md` |
+| Reflection | Done | 已完成 Direct Generation vs Reflection 闭环：`labs/01-direct-generation-vs-reflection/COMPARISON.md` |
 | Planning | Not started | - |
 | Tool use | Not started | - |
 | Evaluation / error analysis | Not started | - |
