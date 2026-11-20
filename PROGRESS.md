@@ -4,7 +4,7 @@
 
 - Current stage: 完成 Day 1–2 学习记录
 - Completion: 2 / 8 modules
-- Current focus: JSON Planning
+- Current focus: 完成 Tool Use Loop
 - Learning goal: 成为能够独立做产品、解决真实问题并获得收入的超级个体
 - Current coding gap: 还不懂如何写代码，需要从最小可运行实验开始
 - Last updated: 2026-11-20
@@ -39,9 +39,9 @@
 
 ## Next actions
 
-1. 选择一个适合反思的简单任务。
-2. 固定同一份输入，分别运行 direct generation 和 reflection。
-3. 用明确 criteria 比较两份结果。
-4. 记录改善、退化和无法判断的地方。
-5. 把实验过程整理到 `labs/01-direct-generation-vs-reflection/`。
-6. 比较 Direct Generation 与 Reflection 的收益、代价和适用场景。
+1. 完成 Tool Use Loop 的 `calculate_changes` 工具。
+2. 完成 `check_data_quality` 和 `generate_summary` 工具。
+3. 串起真正的工具执行、结果读取、状态更新和自动选下一步。
+4. 测试停止条件、失败恢复和最终输出。
+5. 完成 Evaluation / Error Analysis 实验。
+6. 再进入 Research Agent 实验。

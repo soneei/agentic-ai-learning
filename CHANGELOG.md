@@ -23,3 +23,4 @@
 - 完成最小 JSON Planning 执行器逐行学习，整理从 Scenario 输入到 choose_path 分支判断、结构化输出和演示运行的完整链路。
 - 分析执行器距离完整 Agent 的差距：自然语言理解、动态规划、真实工具调用、观察—行动循环、失败恢复、停止条件、记忆和质量评估。
 - 启动 Lab 03：Tool Use Loop，沿用虚拟金融数据分析，先用本地确定性工具验证“选择工具 → 执行 → 观察 → 更新状态 → 继续或停止”。
+- 今日学习收尾：暂停在 `read_dataset` 完成后的检查点；下次继续 `calculate_changes`、其余工具、完整循环，再进入 Evaluation / Error Analysis，最后进入 Research Agent。
