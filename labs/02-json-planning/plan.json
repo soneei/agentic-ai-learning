@@ -1,0 +1,79 @@
+{
+  "task": "基于公司经营数据生成可核验的研究小结",
+  "constraints": [
+    "区分数据事实、可能解释和最终判断",
+    "所有计算可追溯到输入数据",
+    "不得把待验证假设写成事实",
+    "不得在数据不足时给出投资建议"
+  ],
+  "plan": [
+    {
+      "step": 1,
+      "description": "明确研究问题、分析范围和最终输出边界",
+      "tool": "define_scope",
+      "args": {
+        "question": "根据公司经营数据识别主要变化和需要进一步核查的问题",
+        "output": "可核验的研究小结",
+        "forbidden": ["编造表外数据", "直接给出买卖建议"]
+      }
+    },
+    {
+      "step": 2,
+      "description": "读取数据并确认来源、统计时间、单位和同比或环比口径",
+      "tool": "read_and_validate_data",
+      "args": {
+        "source": "user_provided_dataset",
+        "checks": ["source", "period", "unit", "comparison_basis", "missing_values"]
+      }
+    },
+    {
+      "step": 3,
+      "description": "计算关键指标变化并描述表内可确认的趋势",
+      "tool": "calculate_changes",
+      "args": {
+        "input": "validated_data",
+        "metrics": ["absolute_change", "growth_rate", "margin_if_applicable"],
+        "output_type": "descriptive_facts"
+      }
+    },
+    {
+      "step": 4,
+      "description": "识别异常或需要重点关注的变动",
+      "tool": "detect_anomalies",
+      "args": {
+        "input": "calculated_changes",
+        "method": "compare_with_prior_period_and_internal_pattern",
+        "output_type": "anomalies_with_evidence"
+      }
+    },
+    {
+      "step": 5,
+      "description": "针对异常提出可能解释，并明确标记为待验证假设",
+      "tool": "generate_hypotheses",
+      "args": {
+        "input": "anomalies_with_evidence",
+        "language": "可能原因 / 待验证假设",
+        "forbid": ["把推测写成事实"]
+      }
+    },
+    {
+      "step": 6,
+      "description": "复核数字、计算、事实与推论边界，并检查是否遗漏关键风险",
+      "tool": "review_analysis",
+      "args": {
+        "input": "facts_and_hypotheses",
+        "criteria": ["numeric_accuracy", "traceable_evidence", "logic_boundary", "missing_risks", "unsupported_claims"]
+      }
+    },
+    {
+      "step": 7,
+      "description": "生成最终研究小结，区分已确认事实、可能解释和待核实事项",
+      "tool": "generate_research_summary",
+      "args": {
+        "input": "reviewed_analysis",
+        "sections": ["confirmed_facts", "possible_explanations", "items_to_verify", "data_limitations"],
+        "output_format": "markdown"
+      }
+    }
+  ]
+}
