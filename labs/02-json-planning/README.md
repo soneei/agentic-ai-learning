@@ -80,6 +80,23 @@
 
 本轮分支计划见：`plan-with-branches.json`。
 
-## 下一步
+## 最小执行器
 
-将这些分支接入一个最小执行器，观察 Agent 是否能根据不同输入选择正确路径。
+`executor.py` 不调用大语言模型，只负责验证 JSON Planning 的分支规则。
+
+运行：
+
+```bash
+python3 executor.py
+python3 -m unittest discover -p "test_*.py"
+```
+
+测试场景：
+
+- 数据缺失且原始源可补充 → `fetch_from_source`
+- 口径模糊 → `ask_for_clarification`
+- 结果异常 → `verify_source_and_calculation`
+- 原始数据也缺失 → `stop_without_guessing`
+- 数据正常 → `generate_hypotheses`
+
+本实验先把“分支是否正确”与“模型是否聪明”分开，便于定位问题。
