@@ -27,6 +27,7 @@
 - `evaluations/`：实验评估、trace、span 与错误分析
 - `PROGRESS.md`：学习进度看板
 - `CHANGELOG.md`：项目更新记录
+- `HANDWRITING-REVIEW.md`：手写记录与反复回顾协议
 
 ## 学习原则
 
