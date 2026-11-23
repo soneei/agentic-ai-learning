@@ -4,6 +4,7 @@
 
 - Current stage: 完成 Day 1–2 学习记录
 - Completion: 2 / 8 modules
+- Course progress: 课程共 8 节，目前只有前 3 节材料，其余 5 节尚未学习
 - Current focus: 完成 Tool Use Loop
 - Learning goal: 成为能够独立做产品、解决真实问题并获得收入的超级个体
 - Current coding gap: 还不懂如何写代码，需要从最小可运行实验开始
