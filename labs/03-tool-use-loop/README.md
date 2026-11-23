@@ -44,8 +44,24 @@
 
 它不计算增长率、不判断异常，也不生成投资结论，保持单一职责。
 
-运行测试：
+运行测试（注意设置 PYTHONPATH）：
 
 ```bash
-python3 -m unittest test_tools.py
+PYTHONPATH=. python3 -m unittest test_tools.py
 ```
+
+## 第二个工具：`calculate_changes`
+
+接收 `read_dataset` 的返回结果，计算逐年变化：
+
+```text
+若上游 status 不是 success → 直接透传错误，不计算
+若上游 success → 对每个指标算 absolute 和 growth_rate
+→ 输出 changes，并把 next_step 指向 check_data_quality
+```
+
+关键点：
+
+- 只输出表内可核验的数字，不解释原因、不下结论
+- 上一步的错误会原样传递，不会带着坏数据继续算
+- 除零时 growth_rate 返回 None，避免崩溃

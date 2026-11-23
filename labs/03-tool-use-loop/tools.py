@@ -26,3 +26,42 @@ def read_dataset(dataset: Dict[str, object]) -> Dict[str, object]:
         "missing_fields": [],
         "next_step": "calculate_changes",
     }
+
+
+def calculate_changes(tool_result: Dict[str, object]) -> Dict[str, object]:
+    """基于已读取的数据计算逐年变化，只输出表内可核验的事实。"""
+    if tool_result["status"] != "success":
+        return {
+            "status": "error",
+            "data": None,
+            "next_step": tool_result["next_step"],
+        }
+
+    dataset = tool_result["data"]
+    years = dataset["years"]
+    metrics = dataset["metrics"]
+
+    changes = {}
+    for name, values in metrics.items():
+        yearly = []
+        for i in range(1, len(values)):
+            previous = values[i - 1]
+            current = values[i]
+            change = {
+                "year": years[i],
+                "absolute": round(current - previous, 4),
+                "growth_rate": round((current - previous) / previous, 4)
+                if previous != 0 else None,
+            }
+            yearly.append(change)
+        changes[name] = yearly
+
+    return {
+        "status": "success",
+        "data": {
+            "company": dataset["company"],
+            "unit": dataset["unit"],
+            "changes": changes,
+        },
+        "next_step": "check_data_quality",
+    }

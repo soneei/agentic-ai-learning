@@ -18,7 +18,7 @@
 | Agentic workflow | Done | `notes/00-two-day-learning-summary.md` |
 | Reflection | Done | 已完成 Direct Generation vs Reflection 闭环：`labs/01-direct-generation-vs-reflection/COMPARISON.md` |
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
-| Tool use | In progress | 已启动 Lab 03：`labs/03-tool-use-loop/README.md`，第一版使用本地虚拟数据工具 |
+| Tool use | In progress | Lab 03 已完成 `read_dataset`、`calculate_changes` 两个工具，4 个测试通过：`labs/03-tool-use-loop/tools.py` |
 | Evaluation / error analysis | Not started | - |
 | Research agent | Not started | - |
 
