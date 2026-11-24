@@ -1,0 +1,22 @@
+运行状态：completed（done）
+走过的工具：read_dataset → calculate_changes → check_data_quality → generate_summary
+
+# Research Agent 基线小结
+
+公司：星河数据工具（单位：百万元）
+
+## 确认的变化
+- revenue 2024：绝对变化 40，同比 40.0%
+- revenue 2025：绝对变化 56，同比 40.0%
+- net_profit 2024：绝对变化 3，同比 25.0%
+- net_profit 2025：绝对变化 2，同比 13.3%
+- operating_cash_flow 2024：绝对变化 4，同比 22.2%
+- operating_cash_flow 2025：绝对变化 13，同比 59.1%
+
+## 待核实事项
+- 无
+
+## 数据边界
+- 仅描述表内可核验的变化
+- 不解释原因、不预测趋势、不给买卖建议
+

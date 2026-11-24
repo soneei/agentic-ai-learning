@@ -44,4 +44,5 @@
 - 新增 `test_orchestrator.py` 5 个用例；全部 15 个测试通过，Tool Use Loop 完整闭环。
 - 启动 Evaluation / Error Analysis：建 `evaluations/error_analyzer.py`，按 outcome_label 归因到组件、统计频次、输出 top_priority；区分“真失败”与“预期拦截”（should_succeed）；5 个测试通过。
 - 完成失败样本分析报告：`failure_report.py` 构造 7 样本（注入 5 错），`FAILURE-REPORT.txt` 真实输出显示 5 错全抓到、2 正常无误判、归因分布 read_dataset 3 / check_data_quality 2；新增 5 个测试，共 10 个通过。
-- 启动 Lab 04 Research Agent：设计任务边界 `labs/04-research-agent/README.md`——四模式整合定位、IN/OUT 硬边界、Reflection criteria 复用 Lab01、完整链路与目标形态；尚未写代码。
+- 启动 Lab 04 Research Agent：设计任务边界 `labs/04-research-agent/README.md`——四模式整合定位、IN/OUT 硬边界、Reflection criteria 复用 Lab01、完整链路与目标形态。
+- 跑通 Research Agent 基线：`baseline.py` 复用 Lab03 调度器+四工具，产出 `BASELINE-SUMMARY.txt`（3 指标 6 条变化，带数据边界）；修复 `format_summary` 少拆一层 result 的 KeyError；5 个测试通过。

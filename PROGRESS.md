@@ -20,7 +20,7 @@
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
 | Tool use | Done | Lab 03 完成：四个工具 + 调度器 `orchestrator.py`，15 个测试通过；能自动执行、读结果、更新状态、继续或安全停止：`labs/03-tool-use-loop/` |
 | Evaluation / error analysis | Done | 错误分析器 + 失败样本报告完成：`evaluations/FAILURE-REPORT.txt`，7 样本注入 5 错全抓到、2 正常无误判、归因正确；10 个测试通过 |
-| Research agent | In progress | 已设计任务边界：`labs/04-research-agent/README.md`（四模式整合、IN/OUT 硬边界、criteria 复用）；尚未写代码 |
+| Research agent | In progress | 任务边界已设计，基线跑通：`labs/04-research-agent/baseline.py` 复用调度器+四工具产出小结 `BASELINE-SUMMARY.txt`，5 测试通过；下一步加 Reflection |
 
 ## What I understand
 
@@ -45,4 +45,4 @@
 1. ~~串起工具执行循环~~ 已完成：`orchestrator.py`，15 个测试通过。
 2. ~~测试停止条件、失败恢复和最终输出~~ 已完成：5 个调度器测试覆盖正常完工、早停、待核查、步数上限。
 3. ~~完成 Evaluation / Error Analysis 实验~~ 已完成：失败样本报告，10 个测试通过。
-4. 再进入 Research Agent 实验。（任务边界已设计，下一步：跑通调度器基线产出小结）
+4. Research Agent：基线已跑通，下一步加 Reflection 自检报告，再加 Evaluation 归因。

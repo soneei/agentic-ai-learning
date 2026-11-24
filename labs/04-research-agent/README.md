@@ -71,6 +71,20 @@ Reflection + Planning + Tool Use + Evaluation → Research Agent
 3. 加 Evaluation：注入失败样本，产出归因
 4. 形成完整报告
 
+## 第一步：跑通基线（已完成）
+
+`baseline.py` 复用 Lab03 的调度器 + 四工具，不写任何新工具，第一次把机器开起来。
+
+- 自动找到 Lab03 工具目录，一键可跑
+- 输入 3 个指标（营收/净利润/经营现金流）× 3 年
+- 走完 read → calculate → check → summary，产出小结
+- `BASELINE-SUMMARY.txt` 是真实运行输出
+- 5 个测试通过
+
+修过的真实 bug：`run_loop` 返回的最外层是调度器结果，真正的工具输出嵌在 `result["result"]` 里。`format_summary` 一开始少拆了一层导致 `KeyError: 'summary'`，已修正。
+
+> 这又一次印证：跑起来才会暴露问题，光看代码看不出来。
+
 ## 状态
 
-任务边界已设计，尚未写代码。
+基线跑通。下一步：加 Reflection，让 Agent 按 criteria 自检报告。
