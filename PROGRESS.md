@@ -18,7 +18,7 @@
 | Agentic workflow | Done | `notes/00-two-day-learning-summary.md` |
 | Reflection | Done | 已完成 Direct Generation vs Reflection 闭环：`labs/01-direct-generation-vs-reflection/COMPARISON.md` |
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
-| Tool use | In progress | Lab 03 已完成 `read_dataset`、`calculate_changes` 两个工具，4 个测试通过：`labs/03-tool-use-loop/tools.py` |
+| Tool use | In progress | Lab 03 已完成 `read_dataset`、`calculate_changes`、`check_data_quality` 三个工具，8 个测试通过：`labs/03-tool-use-loop/tools.py` |
 | Evaluation / error analysis | Not started | - |
 | Research agent | Not started | - |
 
@@ -40,8 +40,7 @@
 
 ## Next actions
 
-1. 完成 `check_data_quality` 工具。（已完成：read_dataset、calculate_changes 及其 4 个测试）
-2. 完成 `generate_summary` 工具。
+1. 完成 `generate_summary` 工具。（已完成：read_dataset、calculate_changes、check_data_quality 及其 8 个测试）
 3. 串起真正的工具执行、结果读取、状态更新和自动选下一步。
 4. 测试停止条件、失败恢复和最终输出。
 5. 完成 Evaluation / Error Analysis 实验。

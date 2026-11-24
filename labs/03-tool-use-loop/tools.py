@@ -65,3 +65,55 @@ def calculate_changes(tool_result: Dict[str, object]) -> Dict[str, object]:
         },
         "next_step": "check_data_quality",
     }
+
+
+def check_data_quality(tool_result: Dict[str, object]) -> Dict[str, object]:
+    """检查上游计算结果的质量，标记异常但不自行解释原因。"""
+    if tool_result["status"] != "success":
+        return {
+            "status": "error",
+            "data": None,
+            "flags": [],
+            "next_step": tool_result["next_step"],
+        }
+
+    data = tool_result["data"]
+    changes = data["changes"]
+
+    flags = []
+    for metric, yearly in changes.items():
+        for item in yearly:
+            rate = item["growth_rate"]
+            if rate is None:
+                flags.append({
+                    "metric": metric,
+                    "year": item["year"],
+                    "issue": "zero_base_growth_rate_undefined",
+                })
+            elif rate > 1.0:
+                flags.append({
+                    "metric": metric,
+                    "year": item["year"],
+                    "issue": "abnormal_growth_rate_over_100pct",
+                })
+            elif rate < -0.5:
+                flags.append({
+                    "metric": metric,
+                    "year": item["year"],
+                    "issue": "abnormal_drop_over_50pct",
+                })
+
+    if flags:
+        return {
+            "status": "warning",
+            "data": data,
+            "flags": flags,
+            "next_step": "verify_source_and_calculation",
+        }
+
+    return {
+        "status": "success",
+        "data": data,
+        "flags": [],
+        "next_step": "generate_summary",
+    }

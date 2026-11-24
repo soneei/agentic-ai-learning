@@ -65,3 +65,21 @@ PYTHONPATH=. python3 -m unittest test_tools.py
 - 只输出表内可核验的数字，不解释原因、不下结论
 - 上一步的错误会原样传递，不会带着坏数据继续算
 - 除零时 growth_rate 返回 None，避免崩溃
+
+## 第三个工具：`check_data_quality`
+
+接收 `calculate_changes` 的输出，检查数据质量，只标记异常、不解释原因：
+
+```text
+上游报错 → 透传，不检查
+发现异常 → status=warning，flags 列出问题，next_step=verify_source_and_calculation
+数据正常 → status=success，next_step=generate_summary
+```
+
+检查三类异常：
+
+- `zero_base_growth_rate_undefined`：基数为 0，增长率无定义
+- `abnormal_growth_rate_over_100pct`：涨幅超过 100%
+- `abnormal_drop_over_50pct`：跌幅超过 50%
+
+一个设计要点：跌幅下限是 -100%，所以用 `abs(rate) > 1` 永远抓不到暴跌，涨停和跌停必须分开设阈值。这是写测试时发现并修正的真实缺陷。
