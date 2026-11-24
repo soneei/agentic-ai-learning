@@ -19,7 +19,7 @@
 | Reflection | Done | 已完成 Direct Generation vs Reflection 闭环：`labs/01-direct-generation-vs-reflection/COMPARISON.md` |
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
 | Tool use | Done | Lab 03 完成：四个工具 + 调度器 `orchestrator.py`，15 个测试通过；能自动执行、读结果、更新状态、继续或安全停止：`labs/03-tool-use-loop/` |
-| Evaluation / error analysis | Not started | - |
+| Evaluation / error analysis | In progress | 已建错误分析器 `evaluations/error_analyzer.py`：按 trace 归因到 step、统计频次、输出 top_priority；5 个测试通过 |
 | Research agent | Not started | - |
 
 ## What I understand
@@ -32,6 +32,7 @@
 - 已能逐行解释最小 JSON Planning 执行器，并总结其链路：结构化输入 → 按优先级判断 → 选择路径 → 结构化输出。
 - 已区分确定性规则执行器与完整 Agent，识别出自然语言理解、运行时规划、工具执行、观察—行动循环、失败恢复、记忆和质量评估等缺口。
 - Tool Use Loop 闭环：调度器用注册表把 next_step 字符串映射成真实函数，循环执行；四种停止条件保证遇到错误、异常、死循环或未注册步骤时安全停下，不瞎猜。
+- 错误归因思想：只统计“本该成功却失败”的样本，归因到具体 step 再排序；“本来就该拦下”的不能算 bug。
 
 ## Current questions
 
@@ -43,5 +44,5 @@
 
 1. ~~串起工具执行循环~~ 已完成：`orchestrator.py`，15 个测试通过。
 2. ~~测试停止条件、失败恢复和最终输出~~ 已完成：5 个调度器测试覆盖正常完工、早停、待核查、步数上限。
-3. 完成 Evaluation / Error Analysis 实验。
+3. 完成 Evaluation / Error Analysis 实验。（错误分析器已建，5 测试通过；待应用到真实构造的失败样本形成报告）
 4. 再进入 Research Agent 实验。
