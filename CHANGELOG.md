@@ -32,3 +32,7 @@
 - 提交此前遗留的 3 个 Reflection 实验文件，工作区清空；完成全仓公开安全检查（无公司信息、PII、密钥、本地路径）。
 - 实现 `calculate_changes` 工具：错误透传、逐年增长率计算、除零保护，4 个单元测试全部通过。
 - 手写协议新增"代码要不要手记"判断标准：能查到的语法不记，能迁移的判断原则要记。
+
+## 2026-11-24
+
+- 项目状态核对：校正 PROGRESS.md 与代码不一致处——Next actions 删除已完成的 calculate_changes、Completion 表述改为 Modules done 3/7、Last updated 更新为 11-24；实测 4 个测试仍全部通过。

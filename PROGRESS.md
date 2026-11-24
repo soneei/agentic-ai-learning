@@ -2,13 +2,13 @@
 
 ## Overall
 
-- Current stage: 完成 Day 1–2 学习记录
-- Completion: 2 / 8 modules
+- Current stage: Lab 03 Tool Use Loop 进行中
+- Modules done: 3 / 7（Agent vs hardcoded tool、Agentic workflow、Reflection）
 - Course progress: 课程共 8 节，目前只有前 3 节材料，其余 5 节尚未学习
 - Current focus: 完成 Tool Use Loop
 - Learning goal: 成为能够独立做产品、解决真实问题并获得收入的超级个体
 - Current coding gap: 还不懂如何写代码，需要从最小可运行实验开始
-- Last updated: 2026-11-20
+- Last updated: 2026-11-24
 
 ## Modules
 
@@ -40,8 +40,8 @@
 
 ## Next actions
 
-1. 完成 Tool Use Loop 的 `calculate_changes` 工具。
-2. 完成 `check_data_quality` 和 `generate_summary` 工具。
+1. 完成 `check_data_quality` 工具。（已完成：read_dataset、calculate_changes 及其 4 个测试）
+2. 完成 `generate_summary` 工具。
 3. 串起真正的工具执行、结果读取、状态更新和自动选下一步。
 4. 测试停止条件、失败恢复和最终输出。
 5. 完成 Evaluation / Error Analysis 实验。
