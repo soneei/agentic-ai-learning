@@ -46,3 +46,4 @@
 - 完成失败样本分析报告：`failure_report.py` 构造 7 样本（注入 5 错），`FAILURE-REPORT.txt` 真实输出显示 5 错全抓到、2 正常无误判、归因分布 read_dataset 3 / check_data_quality 2；新增 5 个测试，共 10 个通过。
 - 启动 Lab 04 Research Agent：设计任务边界 `labs/04-research-agent/README.md`——四模式整合定位、IN/OUT 硬边界、Reflection criteria 复用 Lab01、完整链路与目标形态。
 - 跑通 Research Agent 基线：`baseline.py` 复用 Lab03 调度器+四工具，产出 `BASELINE-SUMMARY.txt`（3 指标 6 条变化，带数据边界）；修复 `format_summary` 少拆一层 result 的 KeyError；5 个测试通过。
+- Research Agent 加 Reflection：`reflection.py` 把 Lab01 五条 criteria 变成规则版检查（需传原始 dataset 做对照基准）；注入 4 种错全抓到，5 个测试通过。明确规则版 ≠ LLM 自审的能力边界。

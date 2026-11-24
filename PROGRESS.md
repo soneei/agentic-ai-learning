@@ -20,7 +20,7 @@
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
 | Tool use | Done | Lab 03 完成：四个工具 + 调度器 `orchestrator.py`，15 个测试通过；能自动执行、读结果、更新状态、继续或安全停止：`labs/03-tool-use-loop/` |
 | Evaluation / error analysis | Done | 错误分析器 + 失败样本报告完成：`evaluations/FAILURE-REPORT.txt`，7 样本注入 5 错全抓到、2 正常无误判、归因正确；10 个测试通过 |
-| Research agent | In progress | 任务边界已设计，基线跑通：`labs/04-research-agent/baseline.py` 复用调度器+四工具产出小结 `BASELINE-SUMMARY.txt`，5 测试通过；下一步加 Reflection |
+| Research agent | In progress | 边界✓ 基线✓ Reflection✓：`reflection.py` 规则版 5 条 criteria 自检，注入 4 种错全抓到，10 测试通过；下一步加 Evaluation 归因 |
 
 ## What I understand
 

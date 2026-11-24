@@ -85,6 +85,26 @@ Reflection + Planning + Tool Use + Evaluation → Research Agent
 
 > 这又一次印证：跑起来才会暴露问题，光看代码看不出来。
 
+## 第二步：加 Reflection 自检（已完成）
+
+`reflection.py` 把 Lab01 的 5 条 criteria 变成确定性检查代码。
+
+**诚实定位**：这是规则版 Reflection，不是 LLM 自审。
+数字、越界词、边界声明能查；微妙的语义越界查不了。
+
+**一个关键设计**：检查时必须传入原始 dataset 做对照基准。
+只拿报告本身无法核对“数字有没有抄错”——Reflection = 报告 + 原始证据 → 核对。
+
+5 条 criteria：
+
+- 数字正确（逐条对照原始 changes）
+- 结论可追溯（带指标名和年份）
+- 事实推测分开（禁推测词）
+- 无越界建议（禁买卖词）
+- 有数据边界声明
+
+像 Lab01 一样，用故意造错验证：`test_reflection.py` 注入 4 种错（数字错、买卖建议、推测措辞、无依据结论），全部被抓到；干净报告全 PASS。5 个测试通过。
+
 ## 状态
 
-基线跑通。下一步：加 Reflection，让 Agent 按 criteria 自检报告。
+基线和 Reflection 完成。下一步：加 Evaluation 归因，形成完整报告。
