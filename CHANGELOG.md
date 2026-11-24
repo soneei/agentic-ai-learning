@@ -43,3 +43,4 @@
 - 实现调度器 `orchestrator.py`：注册表把 next_step 字符串映射为真实函数，while 循环自动执行；四种停止条件（done / 上游报错 / 步数超限 / 未注册步骤）安全停下，`trace` 记录每步。
 - 新增 `test_orchestrator.py` 5 个用例；全部 15 个测试通过，Tool Use Loop 完整闭环。
 - 启动 Evaluation / Error Analysis：建 `evaluations/error_analyzer.py`，按 outcome_label 归因到组件、统计频次、输出 top_priority；区分“真失败”与“预期拦截”（should_succeed）；5 个测试通过。
+- 完成失败样本分析报告：`failure_report.py` 构造 7 样本（注入 5 错），`FAILURE-REPORT.txt` 真实输出显示 5 错全抓到、2 正常无误判、归因分布 read_dataset 3 / check_data_quality 2；新增 5 个测试，共 10 个通过。

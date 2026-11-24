@@ -54,6 +54,30 @@ cd .. && PYTHONPATH="labs/03-tool-use-loop:evaluations" python3 -m unittest eval
 
 5 个测试全部通过。
 
+## 失败样本分析报告
+
+仿照 Lab01“故意加错测 Reflection”，这里故意往输入数据注入错误，验证错误分析器能否正确归因。
+
+文件：
+
+- `failure_report.py`：构造 2 个正常 + 3 个缺字段 + 2 个异常数据，共 7 个样本
+- `FAILURE-REPORT.txt`：真实运行输出（不是手写编的）
+- `test_failure_report.py`：5 个用例锁定行为
+
+真实结果：
+
+```text
+7 个样本，识别出 5 个失败（注入错误全部抓到，2 个正常样本没误判）
+归因分布：read_dataset 3 次，check_data_quality 2 次
+优先修：read_dataset — 补数据源字段，不要改下游
+```
+
+关键验证点：
+
+- 注入的 5 个错全被抓到（召回）
+- 2 个正常样本没被误判（没有假阳性）
+- 错被归到正确的组件，而不是笼统说“结果不好”
+
 ## 现在的完整链路
 
 ```text

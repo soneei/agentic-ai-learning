@@ -19,7 +19,7 @@
 | Reflection | Done | 已完成 Direct Generation vs Reflection 闭环：`labs/01-direct-generation-vs-reflection/COMPARISON.md` |
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
 | Tool use | Done | Lab 03 完成：四个工具 + 调度器 `orchestrator.py`，15 个测试通过；能自动执行、读结果、更新状态、继续或安全停止：`labs/03-tool-use-loop/` |
-| Evaluation / error analysis | In progress | 已建错误分析器 `evaluations/error_analyzer.py`：按 trace 归因到 step、统计频次、输出 top_priority；5 个测试通过 |
+| Evaluation / error analysis | Done | 错误分析器 + 失败样本报告完成：`evaluations/FAILURE-REPORT.txt`，7 样本注入 5 错全抓到、2 正常无误判、归因正确；10 个测试通过 |
 | Research agent | Not started | - |
 
 ## What I understand
@@ -44,5 +44,5 @@
 
 1. ~~串起工具执行循环~~ 已完成：`orchestrator.py`，15 个测试通过。
 2. ~~测试停止条件、失败恢复和最终输出~~ 已完成：5 个调度器测试覆盖正常完工、早停、待核查、步数上限。
-3. 完成 Evaluation / Error Analysis 实验。（错误分析器已建，5 测试通过；待应用到真实构造的失败样本形成报告）
+3. ~~完成 Evaluation / Error Analysis 实验~~ 已完成：失败样本报告，10 个测试通过。
 4. 再进入 Research Agent 实验。
