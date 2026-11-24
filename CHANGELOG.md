@@ -47,3 +47,4 @@
 - 启动 Lab 04 Research Agent：设计任务边界 `labs/04-research-agent/README.md`——四模式整合定位、IN/OUT 硬边界、Reflection criteria 复用 Lab01、完整链路与目标形态。
 - 跑通 Research Agent 基线：`baseline.py` 复用 Lab03 调度器+四工具，产出 `BASELINE-SUMMARY.txt`（3 指标 6 条变化，带数据边界）；修复 `format_summary` 少拆一层 result 的 KeyError；5 个测试通过。
 - Research Agent 加 Reflection：`reflection.py` 把 Lab01 五条 criteria 变成规则版检查（需传原始 dataset 做对照基准）；注入 4 种错全抓到，5 个测试通过。明确规则版 ≠ LLM 自审的能力边界。
+- Research Agent 全链路完成：`research_agent.py` 把 Tool Use 基线 + Reflection + Evaluation 拼成一条流水线，产出综合报告 `COMPREHENSIVE-REPORT.txt`（三部分：基线小结/Reflection 全 PASS/Evaluation 优先修 read_dataset）；6 个测试通过，全仓库 Lab02/03/04+evaluations 测试全部 OK。四块零件齐备。

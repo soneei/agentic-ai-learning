@@ -105,6 +105,28 @@ Reflection + Planning + Tool Use + Evaluation → Research Agent
 
 像 Lab01 一样，用故意造错验证：`test_reflection.py` 注入 4 种错（数字错、买卖建议、推测措辞、无依据结论），全部被抓到；干净报告全 PASS。5 个测试通过。
 
+## 第三步：加 Evaluation，形成综合报告（已完成 · 四块零件齐）
+
+`research_agent.py` 把三块结果拼成一条流水线：
+
+```text
+Tool Use（基线产出小结）
+  → Reflection（按 5 条 criteria 自检，传原始证据对照）
+  → Evaluation（复用 7 失败样本集，归因到组件）
+  → 综合报告 COMPREHENSIVE-REPORT.txt
+```
+
+Planning 已体现在调度器的分支逻辑里。至此四块零件全部在同一个 Research Agent 里跑通。
+
+综合报告三部分：
+
+1. 基线小结：4 工具执行链 + 6 条可核验变化
+2. Reflection：5 条 criteria 全 PASS
+3. Evaluation：7 样本识别 5 失败，归因 read_dataset 3 次 / check_data_quality 2 次，优先修 read_dataset
+
+6 个测试通过。全仓库四个模块（Lab02/03/04 + evaluations）测试全部 OK。
+
 ## 状态
 
-基线和 Reflection 完成。下一步：加 Evaluation 归因，形成完整报告。
+Research Agent 全链路完成。四块零件齐备，课程前 3 节的核心模式已全部转成可运行代码 + 测试 + 报告。
+下一步：可选——补第 4～8 节课程内容，或把本仓库整理后推送 GitHub。

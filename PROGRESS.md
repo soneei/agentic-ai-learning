@@ -3,7 +3,7 @@
 ## Overall
 
 - Current stage: Lab 03 Tool Use Loop 进行中
-- Modules done: 3 / 7（Agent vs hardcoded tool、Agentic workflow、Reflection）
+- Modules done: 6 / 7（Agent vs hardcoded tool、Agentic workflow、Reflection、Planning、Tool use、Evaluation）；Research agent 全链路已跑通
 - Course progress: 课程共 8 节，目前只有前 3 节材料，其余 5 节尚未学习
 - Current focus: 完成 Tool Use Loop
 - Learning goal: 成为能够独立做产品、解决真实问题并获得收入的超级个体
@@ -20,7 +20,7 @@
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
 | Tool use | Done | Lab 03 完成：四个工具 + 调度器 `orchestrator.py`，15 个测试通过；能自动执行、读结果、更新状态、继续或安全停止：`labs/03-tool-use-loop/` |
 | Evaluation / error analysis | Done | 错误分析器 + 失败样本报告完成：`evaluations/FAILURE-REPORT.txt`，7 样本注入 5 错全抓到、2 正常无误判、归因正确；10 个测试通过 |
-| Research agent | In progress | 边界✓ 基线✓ Reflection✓：`reflection.py` 规则版 5 条 criteria 自检，注入 4 种错全抓到，10 测试通过；下一步加 Evaluation 归因 |
+| Research agent | Done | 四块零件全链路跑通：`research_agent.py` 产出综合报告 `COMPREHENSIVE-REPORT.txt`（基线+Reflection+Evaluation），6 测试通过；全仓库测试 OK |
 
 ## What I understand
 
@@ -45,4 +45,5 @@
 1. ~~串起工具执行循环~~ 已完成：`orchestrator.py`，15 个测试通过。
 2. ~~测试停止条件、失败恢复和最终输出~~ 已完成：5 个调度器测试覆盖正常完工、早停、待核查、步数上限。
 3. ~~完成 Evaluation / Error Analysis 实验~~ 已完成：失败样本报告，10 个测试通过。
-4. Research Agent：基线已跑通，下一步加 Reflection 自检报告，再加 Evaluation 归因。
+4. ~~Research Agent 全链路~~ 已完成：四块零件跑通，产出综合报告。
+5. 后续可选：补课程第 4-8 节；或做公开安全检查后推送 GitHub（推送前必须用户确认文件清单）。
