@@ -102,4 +102,32 @@ PYTHONPATH=. python3 -m unittest test_tools.py
 read_dataset → calculate_changes → check_data_quality → generate_summary
 ```
 
-下一步：写一个调度器，把四个工具串成真正的 Tool Use Loop（自动选工具、执行、读结果、更新状态、继续或停止）。
+## 调度器：`orchestrator.py`
+
+把四个工具串成真正的 Tool Use Loop。核心是**注册表 + 循环 + 停止条件**：
+
+```text
+工具注册表：next_step 字符串 → 真正的函数
+循环：执行工具 → 读结果 → 更新状态 → 再决定
+停止：done / 上游报错 / 步数超限 / 遇到不认识的下一步
+```
+
+关键设计：
+
+- 注册表把字符串变成函数调用，这是“选工具”的本质
+- 停止条件 3：上游报错就停，不让坏数据继续流
+- 停止条件 4：`check_data_quality` 发现异常后，`next_step=verify_source_and_calculation` 注册表里没有对应函数 → 安全停下，等人工核查，绝不瞎调
+- `trace` 记录每一步走了哪个工具、什么状态，方便复盘
+- `max_steps` 是防死循环的保险丝
+
+测试：`test_orchestrator.py`，5 个用例覆盖正常完工、trace 顺序、缺字段早停、异常数据停下待核查、步数上限。
+
+全部测试（工具 10 + 调度器 5 = 15）通过。
+
+```bash
+PYTHONPATH=. python3 -m unittest test_tools.py test_orchestrator.py
+```
+
+至此 Tool Use Loop 完整闭环：四个工具 + 一个调度器，能自动执行、读结果、更新状态、继续或安全停止。
+
+下一步：Evaluation / Error Analysis。

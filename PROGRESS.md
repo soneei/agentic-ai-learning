@@ -18,7 +18,7 @@
 | Agentic workflow | Done | `notes/00-two-day-learning-summary.md` |
 | Reflection | Done | 已完成 Direct Generation vs Reflection 闭环：`labs/01-direct-generation-vs-reflection/COMPARISON.md` |
 | Planning | In progress | 已完成基础 JSON Plan、三类分支和最小执行器：`labs/02-json-planning/executor.py` |
-| Tool use | In progress | Lab 03 四个工具齐备（read_dataset / calculate_changes / check_data_quality / generate_summary），10 个测试通过；待写调度器串成循环：`labs/03-tool-use-loop/tools.py` |
+| Tool use | Done | Lab 03 完成：四个工具 + 调度器 `orchestrator.py`，15 个测试通过；能自动执行、读结果、更新状态、继续或安全停止：`labs/03-tool-use-loop/` |
 | Evaluation / error analysis | Not started | - |
 | Research agent | Not started | - |
 
@@ -31,6 +31,7 @@
 - Evaluation 应先看失败样本和 trace，再决定改哪个组件。
 - 已能逐行解释最小 JSON Planning 执行器，并总结其链路：结构化输入 → 按优先级判断 → 选择路径 → 结构化输出。
 - 已区分确定性规则执行器与完整 Agent，识别出自然语言理解、运行时规划、工具执行、观察—行动循环、失败恢复、记忆和质量评估等缺口。
+- Tool Use Loop 闭环：调度器用注册表把 next_step 字符串映射成真实函数，循环执行；四种停止条件保证遇到错误、异常、死循环或未注册步骤时安全停下，不瞎猜。
 
 ## Current questions
 
@@ -40,7 +41,7 @@
 
 ## Next actions
 
-1. 串起真正的工具执行、结果读取、状态更新和自动选下一步。（四个工具已完成，10 个测试通过）
-2. 测试停止条件、失败恢复和最终输出。
+1. ~~串起工具执行循环~~ 已完成：`orchestrator.py`，15 个测试通过。
+2. ~~测试停止条件、失败恢复和最终输出~~ 已完成：5 个调度器测试覆盖正常完工、早停、待核查、步数上限。
 3. 完成 Evaluation / Error Analysis 实验。
 4. 再进入 Research Agent 实验。
