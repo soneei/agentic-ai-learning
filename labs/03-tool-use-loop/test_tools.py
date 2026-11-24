@@ -1,6 +1,6 @@
 import unittest
 
-from tools import read_dataset, calculate_changes, check_data_quality
+from tools import read_dataset, calculate_changes, check_data_quality, generate_summary
 
 
 class ReadDatasetTests(unittest.TestCase):
@@ -86,6 +86,34 @@ class CheckDataQualityTests(unittest.TestCase):
         result = check_data_quality(calc)
         self.assertEqual(result["status"], "error")
         self.assertEqual(result["next_step"], "fetch_from_source")
+
+
+class GenerateSummaryTests(unittest.TestCase):
+    def _checked(self, metrics):
+        read_result = read_dataset({
+            "company": "星河数据工具",
+            "unit": "百万元",
+            "years": [2023, 2024, 2025],
+            "metrics": metrics,
+        })
+        calc = calculate_changes(read_result)
+        return check_data_quality(calc)
+
+    def test_summary_contains_confirmed_changes_and_limits(self):
+        checked = self._checked({"revenue": [100, 140, 196]})
+        result = generate_summary(checked)
+        self.assertEqual(result["status"], "success")
+        self.assertEqual(result["next_step"], "done")
+        self.assertEqual(len(result["summary"]["confirmed_changes"]), 2)
+        self.assertTrue(result["summary"]["data_limitations"])
+
+    def test_summary_skips_error_upstream(self):
+        read_result = read_dataset({"company": "星河数据工具"})
+        calc = calculate_changes(read_result)
+        checked = check_data_quality(calc)
+        result = generate_summary(checked)
+        self.assertEqual(result["status"], "error")
+        self.assertIsNone(result["summary"])
 
 
 if __name__ == "__main__":

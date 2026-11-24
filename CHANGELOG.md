@@ -37,3 +37,5 @@
 
 - 项目状态核对：校正 PROGRESS.md 与代码不一致处——Next actions 删除已完成的 calculate_changes、Completion 表述改为 Modules done 3/7、Last updated 更新为 11-24；实测 4 个测试仍全部通过。
 - 实现 `check_data_quality` 工具：异常标记（除零、涨幅>100%、跌幅>50%）+ 正常/核查分流，8 个测试全部通过。写测试时发现"跌幅下限 -100%，abs 阈值抓不到暴跌"的缺陷并修正为涨跌分开判断。
+- 实现 `generate_summary` 工具：把质检通过的数据整理为结构化小结（确认变化/待核实/数据边界），上游报错则透传；10 个测试全部通过，四个工具齐备。
+- 提交根目录 README 的 14 天总计划说明（`2c36b24`）。

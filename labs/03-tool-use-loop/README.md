@@ -83,3 +83,23 @@ PYTHONPATH=. python3 -m unittest test_tools.py
 - `abnormal_drop_over_50pct`：跌幅超过 50%
 
 一个设计要点：跌幅下限是 -100%，所以用 `abs(rate) > 1` 永远抓不到暴跌，涨停和跌停必须分开设阈值。这是写测试时发现并修正的真实缺陷。
+
+## 第四个工具：`generate_summary`
+
+接收质检通过的数据，整理成结构化小结：
+
+```text
+上游报错 → 透传，不生成
+正常 → 输出 confirmed_changes / items_to_verify / data_limitations
+→ next_step = done
+```
+
+小结只写表内事实：绝对变化、同比增长率、数据边界。不解释原因、不预测趋势、不给买卖建议。
+
+至此四个工具齐了：
+
+```text
+read_dataset → calculate_changes → check_data_quality → generate_summary
+```
+
+下一步：写一个调度器，把四个工具串成真正的 Tool Use Loop（自动选工具、执行、读结果、更新状态、继续或停止）。

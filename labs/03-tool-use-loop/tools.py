@@ -117,3 +117,42 @@ def check_data_quality(tool_result: Dict[str, object]) -> Dict[str, object]:
         "flags": [],
         "next_step": "generate_summary",
     }
+
+
+def generate_summary(tool_result: Dict[str, object]) -> Dict[str, object]:
+    """把质检通过的数据整理成结构化小结，只写表内事实。"""
+    if tool_result["status"] != "success":
+        return {
+            "status": "error",
+            "summary": None,
+            "next_step": tool_result["next_step"],
+        }
+
+    data = tool_result["data"]
+    changes = data["changes"]
+
+    confirmed = []
+    for metric, yearly in changes.items():
+        for item in yearly:
+            rate = item["growth_rate"]
+            rate_text = "无法计算（基数为0）" if rate is None else f"{round(rate * 100, 1)}%"
+            confirmed.append(
+                f"{metric} {item['year']}：绝对变化 {item['absolute']}，同比 {rate_text}"
+            )
+
+    summary = {
+        "company": data["company"],
+        "unit": data["unit"],
+        "confirmed_changes": confirmed,
+        "items_to_verify": [],
+        "data_limitations": [
+            "仅描述表内可核验的变化",
+            "不解释原因、不预测趋势、不给买卖建议",
+        ],
+    }
+
+    return {
+        "status": "success",
+        "summary": summary,
+        "next_step": "done",
+    }
