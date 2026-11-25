@@ -33,6 +33,17 @@
 - 实现 `calculate_changes` 工具：错误透传、逐年增长率计算、除零保护，4 个单元测试全部通过。
 - 手写协议新增"代码要不要手记"判断标准：能查到的语法不记，能迁移的判断原则要记。
 
+## 2026-11-25
+
+- 校正课程工程进度同步：README、PROGRESS、CHANGELOG 必须与当天实际学习内容一致，不能提前把未来课程写成“明天开始”。
+- 当前学习内容更新为 Reflection 图表工作流与 Planning with Code Execution；本课下半部分下午继续，目标是在 1–2 小时内完成并留下作品产出。
+- 明确课程推进规则：每个小节完成一个小测试，但整体进度优先；讲解需照顾零计算机基础，同时避免把单个概念拆得过碎。
+- 完成本课概念小测试：fixed-tool approach、Code as Action、safe sandbox、flexibility/control trade-off、multi-agent system。
+- 新增 `labs/05-code-as-action/`：使用 `<execute_python>...</execute_python>` 标签提取代码，做 AST 安全检查，在受限命名空间执行多步计划；覆盖正常执行、缺少标签、文件访问拒绝和运行时错误 4 个测试，全部通过。
+- 产出 `DEMO-RESULT.txt`，记录 Code as Action 的成功结果与安全拒绝结果。当前课程概念与最小实验已完成，17:00–18:30 继续复盘并补充最终学习记录。
+- 根据课程深入程度全面更新项目档案：README 从“第 1–3 节/明天开始”改为当前课程收尾状态；补充对象感知 Reflection、Code as Action、安全边界、multi-agent 验证和反馈闭环五条升级线；更新学习原则、课程路线、Lab 05 入口和下一步。同步修正 PROGRESS 的当前阶段、课程状态与下一课交接规则；将 Evaluation 文档从“待做失败样本”改为“已完成并迁移到安全边界测试”。
+- 用户确认当前只完成第 3 节课上半部分：生产级 Sandbox 暂不开发，RestrictedExecutor 仅作为学习版原型，用于验证“代码本身即计划、危险代码拒绝、错误结构化返回”；已将 README 和 PROGRESS 改回准确的“下半部分待继续”，避免把整节课提前标记完成。
+
 ## 2026-11-24
 
 - 项目状态核对：校正 PROGRESS.md 与代码不一致处——Next actions 删除已完成的 calculate_changes、Completion 表述改为 Modules done 3/7、Last updated 更新为 11-24；实测 4 个测试仍全部通过。

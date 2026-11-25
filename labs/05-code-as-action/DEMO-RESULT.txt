@@ -1,0 +1,18 @@
+Code as Action demo result
+
+Input plan inside <execute_python> tags:
+- values = [3, 1, 2]
+- ordered = sorted(values)
+- answer = sum(ordered)
+
+Result:
+status = success
+answer = 6
+
+Safety checks:
+- Missing tags: refused
+- File access with open(...): refused
+- Undefined variable: returned structured NameError
+
+Conclusion:
+The code itself carries the multi-step plan, but execution must be validated and constrained.
