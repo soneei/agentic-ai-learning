@@ -1,10 +1,12 @@
 # Agentic AI Learning
 
-A hands-on engineering log for studying agent design patterns and building reliable agentic systems.
+A hands-on engineering project for studying agent design patterns and building reusable, reliable agentic systems.
 
-This repository contains original notes, small experiments, tests, failure analysis, and design decisions. It does not publish private data or full course transcripts.
+This repository is more than a learning log. Each lesson aims to produce a small artifact that can be run, inspected, reused, or extended by other learners and builders. It contains original notes, experiments, tests, failure analysis, reusable components, and design decisions. It does not publish private data or full course transcripts.
 
 ## What this project is about
+
+The project follows a learn-by-building loop. Every lesson connects a concept to a runnable experiment, a testable boundary, and a reusable artifact.
 
 The learning path moves from individual design patterns to a verifiable research workflow:
 
@@ -67,6 +69,20 @@ See [Lab 05: Code as Action](./labs/05-code-as-action/).
 7. **Use traces, tests, and failure samples to locate root causes.**
 8. **Change one variable at a time and run regression tests.**
 9. **Turn each error into a test, rule, or boundary for the next iteration.**
+
+## Built for reuse
+
+The repository is designed for two audiences:
+
+- **Builders** can run the small tools, inspect the implementation, and extend the tests.
+- **Learners** can follow the concept → experiment → test → correction path and reproduce the reasoning process.
+
+Each artifact should make four things clear:
+
+1. What problem it solves
+2. How to run or inspect it
+3. What the tests prove
+4. What the artifact does not guarantee
 
 ## Learning workflow
 

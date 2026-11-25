@@ -44,6 +44,7 @@
 - 根据课程深入程度全面更新项目档案：README 从“第 1–3 节/明天开始”改为当前课程收尾状态；补充对象感知 Reflection、Code as Action、安全边界、multi-agent 验证和反馈闭环五条升级线；更新学习原则、课程路线、Lab 05 入口和下一步。同步修正 PROGRESS 的当前阶段、课程状态与下一课交接规则；将 Evaluation 文档从“待做失败样本”改为“已完成并迁移到安全边界测试”。
 - 用户确认当前只完成第 3 节课上半部分：生产级 Sandbox 暂不开发，RestrictedExecutor 仅作为学习版原型，用于验证“代码本身即计划、危险代码拒绝、错误结构化返回”；已将 README 和 PROGRESS 改回准确的“下半部分待继续”，避免把整节课提前标记完成。
 - 重写公开首页为纯英文、专业的工程项目介绍：移除 14 天生活计划、趋势判断作品集和个人背景，只保留 Agentic AI 学习范围、当前课程状态、实验产物、工程原则、安全边界和期末方向；同时更新 GitHub repository description。
+- 进一步明确仓库定位：不只是 learning log，而是 learn-by-building project。每个小实验和工具都应具备可运行、可测试、可复用、可学习四种价值；README 新增 Builders / Learners 两类使用者和 artifact 验收标准。
 
 ## 2026-11-24
 
