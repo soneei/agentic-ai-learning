@@ -10,8 +10,8 @@
 - Learning upgrade: 从结果检查、固定工具和 JSON 计划，升级到对象感知 Reflection、Code as Action、安全执行边界和 multi-agent 评估；每节一个小测试，并使用纠错表复盘
 - GitHub practice: 研究优秀开源工程中的 prompt、工具注册、测试和错误处理结构，不复制课程原文或私有数据
 - Current focus: 继续第 3 节课下半部分；暂不推进生产级 Sandbox，先保持学习版原型边界
-- Learning goal: 成为能够独立做产品、解决真实问题并获得收入的超级个体
-- Current coding gap: 还不懂如何写代码，需要从最小可运行实验开始
+- Project goal: build reliable agentic systems through small, testable experiments
+- Learning scope: agent design patterns, planning, tool use, reflection, evaluation, controlled execution, and multi-agent systems
 - Last updated: 2026-11-25
 
 ## Modules
