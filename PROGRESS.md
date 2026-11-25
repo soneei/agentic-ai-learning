@@ -2,8 +2,8 @@
 
 ## Overall
 
-- Current stage: 第 3 节课上半部分已完成，Code as Action 实验已跑通，等待继续学习下半部分
-- Modules done: 基础设计模式 7 / 7 已跑通；当前课程新增 Reflection 图表工作流与 Planning with Code Execution，概念测试通过、实验复盘中
+- Current stage: 第 3 节课上半部分已完成，Code as Action 实验已跑通，17:00 继续下半部分学习
+- Modules done: 基础设计模式 7 / 7 已跑通；当前课程已完成 Reflection 图表工作流、Planning with Code Execution、Code as Action 概念与最小实验
 - Course progress: 课程共 8 节，当前完成第 3 节课上半部分；概念小测试和 Code as Action 最小实验完成，下半部分待继续
 - Small-test rule: 每个课程小节完成一个小测试；8 节全部完成后进入综合大工具项目
 - Final project direction: 业务研究与决策证据助手（暂定，使用虚拟数据）
@@ -13,7 +13,7 @@
 - Project goal: learn by building reliable, reusable agentic systems through small, testable experiments
 - Project promise: every lesson should leave a runnable artifact, a test boundary, and a reusable learning path
 - Learning scope: agent design patterns, planning, tool use, reflection, evaluation, controlled execution, and multi-agent systems
-- Last updated: 2026-11-25
+- Last updated: 2026-11-25 15:43
 
 ## Modules
 

@@ -19,6 +19,8 @@ Understand a pattern
 → improve the design
 ```
 
+The project is updated as new lessons, experiments, reusable components, and test results are completed. The public repository contains the engineering artifacts and their boundaries, not private study conversations or personal routines.
+
 The central question is not “Can the model generate an answer?” but:
 
 > **Can the system plan, act, verify, fail safely, and improve?**
@@ -90,7 +92,7 @@ Each lesson follows the same engineering loop:
 
 ```text
 Course concept
-→ bilingual understanding
+→ understand the concept
 → small knowledge check
 → visible artifact
 → normal-case test
